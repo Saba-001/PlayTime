@@ -1,0 +1,16 @@
+{
+  "presets": ["module:metro-react-native-babel-preset"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["."],
+        "alias": {
+          "@customer": "./src/apps/customer",
+          "@supplier": "./src/apps/supplier",
+          "@common": "./src/common"
+        }
+      }
+    ]
+  ]
+}

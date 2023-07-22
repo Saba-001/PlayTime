@@ -1,3 +1,86 @@
 {
-  "extends": ["expo/tsconfig.base", "@tsconfig/react-native/tsconfig.json"]
+  "extends": ["expo/tsconfig.base", "@tsconfig/react-native/tsconfig.json"],
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@customer/*": ["./apps/customer/*"],
+      "@supplier/*": ["./apps/supplier/*"],
+      "@common/*": ["./common/*"]
+    }
+  }
 }
+
+/*
+.expo
+.vscode
+src
+  apps
+    customer
+      assets
+        ...
+        index.ts from there i export other relative files
+      components
+        ...
+        index.ts from there i export other relative files
+      constants
+        ...
+        index.ts from there i export other relative files
+      hooks
+        ...
+        index.ts from there i export other relative files
+      pages
+        ...
+        index.ts from there i export other relative files
+    supplier
+      assets
+        ...
+        index.ts from there i export other relative files
+      components
+        ...
+        index.ts from there i export other relative files
+      constants
+        ...
+        index.ts from there i export other relative files
+      hooks
+        ...
+        index.ts from there i export other relative files
+      pages
+        ...
+        index.ts from there i export other relative files
+  common
+    assets this contains shared assets
+      ...
+      index.ts from there i export other relative files
+    components this contains shared components
+      ...
+      index.ts from there i export other relative files
+    constants this contains shared constants
+      ...
+      index.ts from there i export other relative files
+    context this contains shared context
+      ...
+      index.ts from there i export other relative files
+    hooks this contains shared hooks
+      ...
+      index.ts from there i export other relative files
+    pages this contains shared pages
+      ...
+      index.ts from there i export other relative files
+    translation this contains shared translations
+      ka.json
+      en.json
+      index.ts from there i export other relative files
+    types this contains shared types
+      ...
+      index.ts from there i export other relative files
+  App.tsx
+  Router.tsx
+.node_modules
+.gitignore
+apps.json
+babel.config.js
+package.json
+tsconfig.json
+yarn-error.log
+yarn.lock
+    */
