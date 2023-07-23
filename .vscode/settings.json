@@ -1,3 +1,7 @@
 {
-  "editor.suggest.showColors": true
+  "editor.suggest.showColors": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true
 }

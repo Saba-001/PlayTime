@@ -1,5 +1,6 @@
-import { Language } from "@common/types";
-import { createContext } from "react";
+import { createContext } from 'react';
+
+import { Language } from '$common/types';
 
 export const LanguageContext = createContext<Language>({} as Language);
 

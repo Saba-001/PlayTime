@@ -1,1 +1,1 @@
-export * from "./useCustomerDashboard";
+export * from './useCustomerDashboard';

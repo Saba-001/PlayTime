@@ -1,1 +1,1 @@
-export * from "./page-hooks";
+export * from './page-hooks';

@@ -1,6 +1,6 @@
 export enum AppLangCode {
-  EN = "en",
-  KA = "ka",
+  EN = 'en',
+  KA = 'ka',
 }
 
 export type Language = {

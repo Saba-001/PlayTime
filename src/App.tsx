@@ -1,8 +1,9 @@
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { Router } from "./Router";
-import { useLanguage, useTranslation } from "./common/hooks";
-import { LanguageProvider } from "./common/context";
+import { LanguageProvider } from '$common/context';
+import { useLanguage } from '$common/hooks';
+
+import { Router } from './Router';
 
 export default function App() {
   const language = useLanguage();
