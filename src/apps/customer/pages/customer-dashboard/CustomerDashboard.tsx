@@ -1,5 +1,6 @@
-import { PageContainer } from "@common/components";
-import { Text } from "react-native";
+import { Text } from 'react-native';
+
+import { PageContainer } from '$common/components';
 
 export const CustomerDashboard = () => {
   return (

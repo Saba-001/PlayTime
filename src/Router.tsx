@@ -1,10 +1,11 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { useState } from 'react';
+import { Text, View } from 'react-native';
 
-import { useState } from "react";
-import { Text, View } from "react-native";
-import { LoadingPage } from "./common/pages";
-import { useCustomerDashboard } from "./apps/customer/hooks";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import { LoadingPage } from '$common/pages';
+import { useCustomerDashboard } from '$customer/hooks';
 
 export const Router = () => {
   const Stack = createStackNavigator();

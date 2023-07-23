@@ -1,2 +1,2 @@
-export * from "./language";
-export * from "./scheme";
+export * from './language';
+export * from './scheme';

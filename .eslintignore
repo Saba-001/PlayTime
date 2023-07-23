@@ -1,0 +1,5 @@
+node_modules/
+.expo/
+.vscode/
+babel.config.js
+*.min.js

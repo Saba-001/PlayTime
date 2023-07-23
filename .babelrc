@@ -6,9 +6,10 @@
       {
         "root": ["."],
         "alias": {
-          "@customer": "./src/apps/customer",
-          "@supplier": "./src/apps/supplier",
-          "@common": "./src/common"
+          "$customer": "./src/apps/customer",
+          "$supplier": "./src/apps/supplier",
+          "$common": "./src/common",
+          "$src": "./src"
         }
       }
     ]

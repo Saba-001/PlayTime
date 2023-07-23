@@ -1,15 +1,18 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { AppLangCode } from "@common/types";
-import { en, ka } from "@common/translation";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import { en, ka } from '$common/translation';
+import { AppLangCode } from '$common/types';
 
 const getTranslations = (lang: AppLangCode): Record<string, string> => {
   switch (lang) {
-    case "en":
+    case 'en':
       return en;
-    case "ka":
+
+    case 'ka':
       return ka;
+
     default:
       return en;
   }
@@ -23,10 +26,12 @@ export const useLanguage = () => {
   useEffect(() => {
     const getStoredLanguage = async () => {
       try {
-        const storedLanguage = await AsyncStorage.getItem("language");
+        const storedLanguage = await AsyncStorage.getItem('language');
+
         return (storedLanguage || AppLangCode.EN) as AppLangCode;
       } catch (error) {
         console.log(error);
+
         return AppLangCode.EN;
       }
     };
@@ -39,7 +44,7 @@ export const useLanguage = () => {
   useEffect(() => {
     const updateStoredLanguage = async () => {
       try {
-        await AsyncStorage.setItem("language", currentLangauge);
+        await AsyncStorage.setItem('language', currentLangauge);
       } catch (error) {
         console.log(error);
       }
@@ -48,17 +53,24 @@ export const useLanguage = () => {
     updateStoredLanguage();
   }, [currentLangauge]);
 
-  const t = useCallback((text: string): string => {
-    const translations = getTranslations(currentLangauge);
-    return translations[text] || translations["translation_missed"];
-  }, []);
+  const t = useCallback(
+    (text: string): string => {
+      const translations = getTranslations(currentLangauge);
+
+      return translations[text] || translations['translation_missed'];
+    },
+    [currentLangauge]
+  );
 
   return useMemo(
     () => ({
       t,
+
       setCurrentLanguage,
+
       currentLangauge,
     }),
+
     [t, setCurrentLanguage, currentLangauge]
   );
 };

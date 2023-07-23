@@ -1,7 +1,8 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren } from 'react';
 
-import { ContentWrapper, CustomSafeView } from "./styles";
-import { useOSColor } from "@common/hooks";
+import { useOSColor } from '$common/hooks';
+
+import { ContentWrapper, CustomSafeView } from './styles';
 
 export const PageContainer: React.FC<PropsWithChildren> = ({ children }) => {
   const { isDark } = useOSColor();
