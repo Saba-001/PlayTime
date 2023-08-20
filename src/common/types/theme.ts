@@ -5,15 +5,9 @@ export type AppFonts = {
 };
 
 export const FONTS = {
-  primaryRegular: 'Satoshi-regular',
-  primaryMedium: 'Satoshi-medium',
-  primaryBold: 'Satoshi-bold',
-};
-
-export const kaFonts: AppFonts = {
-  primaryRegular: 'Helvetica-medium',
-  primaryMedium: 'Helvetica-medium',
-  primaryBold: 'Helvetica-medium',
+  primaryRegular: 'Satoshi-Regular',
+  primaryMedium: 'Satoshi-Medium',
+  primaryBold: 'Satoshi-Bold',
 };
 
 export type AppFontKeys = keyof typeof FONTS;

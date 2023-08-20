@@ -1,12 +1,23 @@
 import { PropsWithChildren } from 'react';
 import { StyleProp, TextStyle } from 'react-native';
 
-import { CustomText } from './styles';
+import { CustomText, TextProps } from './styles';
 
-type TypographyProps = PropsWithChildren & {
-  style?: StyleProp<TextStyle>;
-};
+type TypographyProps = PropsWithChildren &
+  Partial<TextProps> & {
+    style?: StyleProp<TextStyle>;
+  };
 
-export const Typography: React.FC<TypographyProps> = ({ children, style }) => {
-  return <CustomText style={style}>{children}</CustomText>;
+export const Typography: React.FC<TypographyProps> = ({
+  children,
+  style,
+  type = 'primary',
+  fontFamily = 'primaryMedium',
+  color = '#0000000',
+}) => {
+  return (
+    <CustomText style={style} type={type} fontFamily={fontFamily} color={color}>
+      {children}
+    </CustomText>
+  );
 };

@@ -1,15 +1,38 @@
 import { PropsWithChildren } from 'react';
+import { useTheme } from 'styled-components/native';
 
-import { useOSColor } from '$common/hooks';
+import { useRoute } from '@react-navigation/native';
 
-import { ContentWrapper, CustomSafeView } from './styles';
+import { Typography } from '../Typography/Typography';
+
+import {
+  ContentWrapper,
+  CustomPlayTimeTitle,
+  CustomSafeView,
+  PageFrameContainer,
+  PageHeader,
+} from './styles';
 
 export const PageContainer: React.FC<PropsWithChildren> = ({ children }) => {
-  const { isDark } = useOSColor();
+  const route = useRoute();
+
+  const { colors } = useTheme();
 
   return (
-    <CustomSafeView isDark={isDark}>
-      <ContentWrapper>{children}</ContentWrapper>
+    <CustomSafeView>
+      <PageFrameContainer>
+        <PageHeader>
+          <CustomPlayTimeTitle />
+          <Typography
+            type="headline"
+            fontFamily="primaryMedium"
+            color={colors.text.secondary}
+          >
+            {route.name}
+          </Typography>
+        </PageHeader>
+        <ContentWrapper>{children}</ContentWrapper>
+      </PageFrameContainer>
     </CustomSafeView>
   );
 };
