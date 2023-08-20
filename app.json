@@ -7,6 +7,10 @@
     "platforms": ["ios", "android"],
     "orientation": "portrait",
     "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./src/common/assets/images/50.png",
+      "resizeMode": "cover"
+    },
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
