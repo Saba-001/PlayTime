@@ -2,25 +2,24 @@
   "expo": {
     "name": "PlayTime",
     "slug": "PlayTime",
+    "description": "PlayTime: Reserve game rooms, cinema halls, sports arenas, and more for non-stop entertainment!",
     "version": "1.0.0",
-    "sourceExts": ["js", "json", "ts", "tsx", "jsx", "vue"],
+    "platforms": ["ios", "android"],
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "splash": {
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./src/common/assets/images/50.png",
+      "resizeMode": "cover"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#ffffff"
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Allow location access while using the app to suggest nearest game rooms."
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "android": {
+      "permissions": ["ACCESS_FINE_LOCATION"]
     }
   }
 }

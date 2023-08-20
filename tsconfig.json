@@ -2,6 +2,7 @@
   "extends": ["expo/tsconfig.base", "@tsconfig/react-native/tsconfig.json"],
   "compilerOptions": {
     "baseUrl": "src",
+    "jsx": "react-jsx",
     "paths": {
       "$customer/*": ["./apps/customer/*"],
       "$supplier/*": ["./apps/supplier/*"],
