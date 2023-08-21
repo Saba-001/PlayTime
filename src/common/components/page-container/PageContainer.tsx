@@ -3,6 +3,7 @@ import { useTheme } from 'styled-components/native';
 
 import { useRoute } from '@react-navigation/native';
 
+import { useNavigationList } from '../navigation/Navigation';
 import { Typography } from '../typography/Typography';
 
 import {
@@ -17,6 +18,7 @@ export const PageContainer: React.FC<PropsWithChildren> = ({ children }) => {
   const route = useRoute();
 
   const { colors } = useTheme();
+  const { navigationList } = useNavigationList();
 
   return (
     <CustomSafeView>
@@ -28,7 +30,7 @@ export const PageContainer: React.FC<PropsWithChildren> = ({ children }) => {
             fontFamily="primaryMedium"
             color={colors.text.secondary}
           >
-            {route.name}
+            {navigationList.find((item) => item.route === route.name)?.name}
           </Typography>
         </PageHeader>
         <ContentWrapper>{children}</ContentWrapper>

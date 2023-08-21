@@ -2,7 +2,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import { DarkThemeLogo, LightThemeLogo } from '$common/assets';
 import { POEMS } from '$common/constants';
-import { useTranslation } from '$common/hooks';
+import { useTranslation } from '$common/hooks/useTranslation';
 
 import { AppName, LoadingPageContainer, Logo, Poem } from './styles';
 

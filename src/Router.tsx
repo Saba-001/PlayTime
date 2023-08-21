@@ -3,8 +3,7 @@ import * as Font from 'expo-font';
 
 import { NavigationContainer } from '@react-navigation/native';
 
-import { useRouter } from '$common/hooks';
-import { CustomerDashboard } from '$customer/pages';
+import { useRouter } from '$common/hooks/useRouter';
 
 export const Router = () => {
   const [fontLoaded, setFontLoaded] = useState(false);

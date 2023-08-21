@@ -1,5 +1,11 @@
 {
   "hello_world": "გამარჯობა სამყარო",
-  "translation_missed": "თარგმნა არ მოიძებნა",
-  "common_play_time": "PlayTime"
+
+  "common_play_time": "PlayTime",
+  "common_discovery": "აღმოჩენა",
+  "common_game_rooms": "ოთახები",
+  "common_categories": "კატეგორიები",
+  "common_settings": "პარამეტრები",
+
+  "translation_missed": "თარგმნა არ მოიძებნა"
 }
