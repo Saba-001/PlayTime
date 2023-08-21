@@ -1,7 +1,8 @@
 import { Dimensions } from 'react-native';
 import styled from 'styled-components/native';
 
-import { Img, Typography } from '$common/components';
+import { Img } from '$common/components/img';
+import { Typography } from '$common/components/typography';
 
 export const LoadingPageContainer = styled.View`
   flex: 1;

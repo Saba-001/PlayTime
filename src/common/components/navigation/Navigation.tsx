@@ -1,11 +1,40 @@
-import { Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+import { NavigationList, StackNavigation } from '$common/types';
+
+import { NavigationItem } from './components/NavigationItem';
+
+import { NavigationFooterContainer } from './styles';
 
 export { useNavigationList } from './hooks/useNavigationList';
 
-export const Navigation = () => {
+type NavigationProps = {
+  navigationList: NavigationList[];
+  activeRoute: string;
+};
+
+export const Navigation: React.FC<NavigationProps> = ({
+  activeRoute,
+  navigationList,
+}) => {
+  const navigation = useNavigation<StackNavigation>();
+
   return (
-    <View>
-      <Text>123</Text>
-    </View>
+    <NavigationFooterContainer>
+      {navigationList.map((item, i) => {
+        const handleClick = () => {
+          navigation.navigate(item.route);
+        };
+
+        return (
+          <NavigationItem
+            key={i}
+            isActive={activeRoute === item.route}
+            onClick={handleClick}
+            {...item}
+          />
+        );
+      })}
+    </NavigationFooterContainer>
   );
 };

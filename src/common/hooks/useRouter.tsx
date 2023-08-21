@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { ROUTES, USERTYPE } from '$common/types';
+import { RootStackParamList, ROUTES, USERTYPE } from '$common/types';
 import { CustomerDashboard } from '$customer/pages';
 
 type RouteList = {
@@ -14,7 +14,7 @@ export const useRouter = () => {
   // temp should come from me query probably
   const [userType, setUserType] = useState<USERTYPE>(USERTYPE.CUSTOMER);
 
-  const Stack = createStackNavigator<Record<ROUTES, undefined>>();
+  const Stack = createStackNavigator<RootStackParamList>();
 
   const routeList: RouteList = [];
   if (userType === USERTYPE.CUSTOMER) {

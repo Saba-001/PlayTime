@@ -6,5 +6,6 @@ export type AppColors = {
   text: {
     primary: string;
     secondary: string;
+    active: string;
   };
 };

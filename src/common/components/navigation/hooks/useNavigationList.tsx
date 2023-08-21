@@ -1,75 +1,71 @@
 import { useState } from 'react';
+import { useTheme } from 'styled-components/native';
 
-import { PlayTimeTitleIcon } from '$common/assets/icons';
 import { useTranslation } from '$common/hooks/useTranslation';
-import { ROUTES, USERTYPE } from '$common/types';
+import { NavigationList, ROUTES, USERTYPE } from '$common/types';
 
-type NavigationList = {
-  route: ROUTES;
-  name: string;
-  icon: JSX.Element;
-  activeIcon: JSX.Element;
-}[];
+import { CustomDiscoveryIcon } from '../styles';
 
 export const useNavigationList = () => {
   // temp should come from me query probably
   const [userType, setUserType] = useState<USERTYPE>(USERTYPE.CUSTOMER);
 
   const { t } = useTranslation();
+  const { colors } = useTheme();
 
-  const navigationList: NavigationList = [];
+  const navigationList: NavigationList[] = [];
 
-  const customerNavigationList: NavigationList = [
+  const customerNavigationList: NavigationList[] = [
     {
       route: ROUTES.DISCOVERY,
       name: t('common_discovery'),
-      icon: <PlayTimeTitleIcon />,
-      activeIcon: <PlayTimeTitleIcon />,
+      icon: <CustomDiscoveryIcon />,
+      activeIcon: <CustomDiscoveryIcon color={colors.text.active} />,
     },
     {
       route: ROUTES.GAMEROOMS,
       name: t('common_game_rooms'),
-      icon: <PlayTimeTitleIcon />,
-      activeIcon: <PlayTimeTitleIcon />,
+      icon: <CustomDiscoveryIcon />,
+      activeIcon: <CustomDiscoveryIcon color={colors.text.active} />,
     },
     {
       route: ROUTES.CATEGORIES,
       name: t('common_categories'),
-      icon: <PlayTimeTitleIcon />,
-      activeIcon: <PlayTimeTitleIcon />,
+      icon: <CustomDiscoveryIcon />,
+      activeIcon: <CustomDiscoveryIcon color={colors.text.active} />,
     },
     {
       route: ROUTES.SETTINGS,
       name: t('common_settings'),
-      icon: <PlayTimeTitleIcon />,
-      activeIcon: <PlayTimeTitleIcon />,
+      icon: <CustomDiscoveryIcon />,
+      activeIcon: <CustomDiscoveryIcon color={colors.text.active} />,
     },
   ];
 
-  const supplierNavigationList: NavigationList = [
+  const supplierNavigationList: NavigationList[] = [
     {
       route: ROUTES.DISCOVERY,
       name: t('common_discovery'),
-      icon: <PlayTimeTitleIcon />,
-      activeIcon: <PlayTimeTitleIcon />,
+      icon: <CustomDiscoveryIcon />,
+      activeIcon: <CustomDiscoveryIcon color={colors.text.active} />,
     },
     {
       route: ROUTES.GAMEROOMS,
       name: t('common_game_rooms'),
-      icon: <PlayTimeTitleIcon />,
-      activeIcon: <PlayTimeTitleIcon />,
+      icon: <CustomDiscoveryIcon />,
+      activeIcon: <CustomDiscoveryIcon color={colors.text.active} />,
     },
     {
       route: ROUTES.CATEGORIES,
       name: t('common_categories'),
-      icon: <PlayTimeTitleIcon />,
-      activeIcon: <PlayTimeTitleIcon />,
+      icon: <CustomDiscoveryIcon />,
+      activeIcon: <CustomDiscoveryIcon color={colors.text.active} />,
     },
     {
       route: ROUTES.SETTINGS,
       name: t('common_settings'),
-      icon: <PlayTimeTitleIcon />,
-      activeIcon: <PlayTimeTitleIcon />,
+      icon: <CustomDiscoveryIcon />,
+      activeIcon: <CustomDiscoveryIcon color={colors.text.active} />,
     },
   ];
 
