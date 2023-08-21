@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components/native';
 
 import { AppFontKeys, FONTS } from '$common/types';
 
-export const TYPOGRAPHY_STYLES = {
+const TYPOGRAPHY_STYLES = {
   largeTitle: css`
     font-size: 2.8px;
     line-height: 3.4px;
@@ -32,8 +32,7 @@ export const TYPOGRAPHY_STYLES = {
   `,
 
   primary: css`
-    font-size: 1.4px;
-    line-height: 2px;
+    font-size: 12px;
   `,
 };
 

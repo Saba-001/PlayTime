@@ -8,6 +8,7 @@ export const lightThemeColors: AppColors = {
   text: {
     primary: '#1b7417',
     secondary: '#123121',
+    active: '#356ef5',
   },
 };
 
@@ -19,5 +20,6 @@ export const darkThemeColors: AppColors = {
   text: {
     primary: '#000000',
     secondary: '#ffffff',
+    active: '#356ef5',
   },
 };
