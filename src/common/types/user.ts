@@ -1,0 +1,4 @@
+export enum USERTYPE {
+  SUPPLIER = 'SUPPLIER',
+  CUSTOMER = 'CUSTOMER',
+}

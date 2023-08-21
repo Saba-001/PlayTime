@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import * as Font from 'expo-font';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
+import { useRouter } from '$common/hooks';
 import { CustomerDashboard } from '$customer/pages';
 
 export const Router = () => {
@@ -22,35 +22,23 @@ export const Router = () => {
     loadFont();
   }, []);
 
-  const Stack = createStackNavigator();
-  const [isSupplierView, setIsSupplierView] = useState<boolean>();
-
-  // if (isSupplierView === undefined) {
-  //   return <LoadingPage />; // should become error open app again
-  // }
+  const { Stack, routeList } = useRouter();
 
   if (!fontLoaded) {
     return null;
   }
 
-  if (isSupplierView) {
-    return (
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Dashboard" component={CustomerDashboard} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    );
-  }
-
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="Dashboard"
-          component={CustomerDashboard}
-        />
+      <Stack.Navigator initialRouteName={routeList[0].route}>
+        {routeList.map((route, i) => (
+          <Stack.Screen
+            key={i}
+            options={{ headerShown: false }}
+            name={route.route}
+            component={route.component}
+          />
+        ))}
       </Stack.Navigator>
     </NavigationContainer>
   );

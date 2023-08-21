@@ -14,10 +14,8 @@ export const Typography: React.FC<TypographyProps> = ({
   type = 'primary',
   fontFamily = 'primaryMedium',
   color = '#0000000',
-}) => {
-  return (
-    <CustomText style={style} type={type} fontFamily={fontFamily} color={color}>
-      {children}
-    </CustomText>
-  );
-};
+}) => (
+  <CustomText style={style} type={type} fontFamily={fontFamily} color={color}>
+    {children}
+  </CustomText>
+);
