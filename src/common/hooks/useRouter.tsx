@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { USERTYPE } from '$common/types';
+import { ROUTES, USERTYPE } from '$common/types';
 import { CustomerDashboard } from '$customer/pages';
 
 type RouteList = {
-  route: string;
+  route: ROUTES;
   component: () => JSX.Element;
 }[];
 
@@ -14,7 +14,7 @@ export const useRouter = () => {
   // temp should come from me query probably
   const [userType, setUserType] = useState<USERTYPE>(USERTYPE.CUSTOMER);
 
-  const Stack = createStackNavigator<Record<string, undefined>>();
+  const Stack = createStackNavigator<Record<ROUTES, undefined>>();
 
   const routeList: RouteList = [];
   if (userType === USERTYPE.CUSTOMER) {
@@ -29,38 +29,40 @@ export const useRouter = () => {
 
 const customerRoutes = [
   {
-    route: 'discovery',
+    route: ROUTES.DISCOVERY,
+
     component: CustomerDashboard,
   },
   {
-    route: 'game-room',
+    route: ROUTES.GAMEROOMS,
     component: CustomerDashboard,
   },
   {
-    route: 'categories',
+    route: ROUTES.CATEGORIES,
     component: CustomerDashboard,
   },
   {
-    route: 'settings',
+    route: ROUTES.SETTINGS,
     component: CustomerDashboard,
   },
 ];
 
 const supplierRoutes = [
   {
-    route: 'discovery',
+    route: ROUTES.DISCOVERY,
+
     component: CustomerDashboard,
   },
   {
-    route: 'game-room',
+    route: ROUTES.GAMEROOMS,
     component: CustomerDashboard,
   },
   {
-    route: 'categories',
+    route: ROUTES.CATEGORIES,
     component: CustomerDashboard,
   },
   {
-    route: 'settings',
+    route: ROUTES.SETTINGS,
     component: CustomerDashboard,
   },
 ];

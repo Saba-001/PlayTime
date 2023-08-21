@@ -1,5 +1,11 @@
 {
   "hello_world": "Hello World",
+
   "common_play_time": "PlayTime",
+  "common_discovery": "Discovery",
+  "common_game_rooms": "Game Rooms",
+  "common_categories": "Categories",
+  "common_settings": "Settings",
+
   "translation_missed": "Translation Missing"
 }

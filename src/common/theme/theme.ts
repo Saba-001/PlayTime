@@ -1,4 +1,4 @@
-import { useOSColor } from '$common/hooks';
+import { useOSColor } from '$common/hooks/useOSColor';
 
 import { darkThemeColors, lightThemeColors } from './colors';
 import { AppColors } from './types';
