@@ -3,7 +3,7 @@ import { useTheme } from 'styled-components/native';
 
 import { useRoute } from '@react-navigation/native';
 
-import { Typography } from '../Typography/Typography';
+import { Typography } from '../typography/Typography';
 
 import {
   ContentWrapper,

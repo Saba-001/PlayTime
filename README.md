@@ -1,3 +1,3 @@
-## crear start
+## clear start
 
 expo start --clear
